@@ -1,6 +1,9 @@
-//const colors=require("colors");
-const chalk =require('chalk');
+const http=require('http');
+const data=require('./data');
+http.createServer((req,res)=>{
+    res.writeHead(200,{'Content-Type':'application/json'});
+    res.write(JSON.stringify(data));
+res.end();
 
-console.log(chalk.blue('Hello world!'));
-
-console.log("adarsh gurjar".yellow);
+}).listen(4200);
+console.log("http://localhost:4200"); 
